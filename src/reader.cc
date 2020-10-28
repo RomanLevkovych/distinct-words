@@ -13,9 +13,10 @@ Reader::Reader(std::istream& is, std::weak_ptr<IReaderDelegate> delegate)
     : stream_(is), delegate_(delegate) {}
 
 void Reader::exec() {
-    std::string buffer(kBufferSize, '\0');
+    char buffer[kBufferSize];
     while (true) {
-        stream_.get(&buffer[0], kBufferSize);
+        bzero(buffer, kBufferSize);
+        stream_.get(buffer, kBufferSize);
         if (auto delegate = delegate_.lock()) {
             delegate->addBuffer(buffer);
         }

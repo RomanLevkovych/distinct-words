@@ -8,4 +8,9 @@ add_executable(distinct_words
     src/words_counter.cc
 )
 
+target_include_directories(distinct_words
+    PUBLIC
+      ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
 target_compile_features(distinct_words PRIVATE cxx_std_17)
