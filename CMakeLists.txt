@@ -6,6 +6,7 @@ add_executable(distinct_words
     src/main.cc
     src/reader.cc
     src/words_counter.cc
+    src/thread_safe_string_queue.cc
 )
 
 target_include_directories(distinct_words
