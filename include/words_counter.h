@@ -5,6 +5,7 @@
 #include <string>
 #include <unordered_set>
 #include <string_view>
+#include <thread>
 
 #include "ireader_delegate.h"
 
@@ -17,6 +18,7 @@ class WordsCounter : public IReaderDelegate {
     size_t uniqueWordsCount() const;
 
    private:
+    std::thread worker_;
     std::unordered_set<std::string> dictionary_;
     std::string container_;
 };
