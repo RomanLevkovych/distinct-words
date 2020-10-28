@@ -18,7 +18,7 @@ class WordsCounter : public IReaderDelegate {
 
    private:
     std::unordered_set<std::string> dictionary_;
-    std::stringstream input_stream_;
+    std::string container_;
 };
 
 #endif  // WORDS_COUNTER_H
