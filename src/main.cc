@@ -8,7 +8,7 @@
 #include "reader.h"
 #include "words_counter.h"
 
-int main(int argc, char *argv[]) {
+int main() {
     std::ios::sync_with_stdio(false);
     auto counter = std::make_shared<WordsCounter>();
     Reader reader(std::cin, counter);

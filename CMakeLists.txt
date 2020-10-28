@@ -15,3 +15,4 @@ target_include_directories(distinct_words
 )
 
 target_compile_features(distinct_words PRIVATE cxx_std_17)
+target_compile_options(distinct_words PRIVATE -Wall -Wextra)
